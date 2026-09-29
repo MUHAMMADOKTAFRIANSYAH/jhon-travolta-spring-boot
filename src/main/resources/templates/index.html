@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Gaji John Travolta</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5a800, #ffd84d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #003087;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #f5a800;
+        }
+
+        .info {
+            background: #fff8e7;
+            border-left: 5px solid #f5a800;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #003087;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #00205e;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Perhitungan Gaji John Travolta</h1>
+        <p>Sistem Perhitungan Gaji Mingguan Berbasis Spring Boot</p>
+    </div>
+
+    <div class="info">
+        <strong>Ketentuan Gaji:</strong><br>
+        Gaji normal untuk 40 jam kerja adalah
+        <strong>Rp15.000/jam</strong>.<br>
+        Jika bekerja lebih dari 40 jam, maka jam lembur
+        dibayar <strong>1,5 kali</strong> gaji normal.
+    </div>
+
+    <form action="/hitung" method="post">
+
+        <div class="form-group">
+            <label>Jumlah Jam Kerja per Minggu</label>
+            <input
+                    type="number"
+                    name="jamKerja"
+                    value="52"
+                    min="0"
+                    step="0.5"
+                    required>
+        </div>
+
+        <div class="form-group">
+            <label>Jam Kerja Normal</label>
+            <input
+                    type="number"
+                    name="jamNormal"
+                    value="40"
+                    min="0"
+                    step="0.5"
+                    required>
+        </div>
+
+        <div class="form-group">
+            <label>Gaji Normal per Jam (Rp)</label>
+            <input
+                    type="number"
+                    name="rate"
+                    value="15000"
+                    min="0"
+                    required>
+        </div>
+
+        <div class="form-group">
+            <label>Pengali Gaji Lembur</label>
+            <input
+                    type="number"
+                    name="pengaliLembur"
+                    value="1.5"
+                    min="1"
+                    step="0.5"
+                    required>
+        </div>
+
+        <div class="form-group">
+            <label>Pengeluaran Mingguan (Rp)</label>
+            <input
+                    type="number"
+                    name="pengeluaran"
+                    value="600000"
+                    min="0"
+                    required>
+        </div>
+
+        <button type="submit">
+            HITUNG GAJI
+        </button>
+
+    </form>
+
+    <div class="footer">
+        Implementasi Spring Boot & Thymeleaf
+    </div>
+
+</div>
+
+</body>
+</html>
